@@ -1,0 +1,189 @@
+unit UfrmCalculadora;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Samples.Spin, UProcessa;
+
+type
+  TOperacao = (toSoma, toSub, toMult, toDiv );
+  TfrmCalculadora = class(TForm)
+    GroupBox1: TGroupBox;
+    rgOperacao: TRadioGroup;
+    btnResult: TButton;
+    Panel1: TPanel;
+    edtDisplay: TEdit;
+    seNum1: TSpinEdit;
+    btnLimpar: TButton;
+    Panel2: TPanel;
+    btnImpA: TButton;
+    Splitter1: TSplitter;
+    Splitter2: TSplitter;
+    btnImpC: TButton;
+    btnImpB: TButton;
+    procedure FormShow(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure seNum1Exit(Sender: TObject);
+    procedure rgOperacaoClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+    procedure btnResultClick(Sender: TObject);
+    procedure btnImpAClick(Sender: TObject);
+    procedure btnImpBClick(Sender: TObject);
+    procedure btnImpCClick(Sender: TObject);
+  private
+    { Private declarations }
+    fnum1: Double;
+    fnum2: Double;
+    op: TOperacao;
+    Calc: ICalculadora;
+    Imposto: IImposto;
+    procedure Limpar;
+    procedure SetNumeros(const value: Integer);
+    function OpToDisplay(const value: TOperacao): string;
+    procedure setOp(const value: Integer);
+    procedure Processa;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCalculadora: TfrmCalculadora;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmCalculadora.btnImpAClick(Sender: TObject);
+begin
+  if fnum1 <> 0 then begin
+    Imposto := TIptA.Create;
+    edtDisplay.Text := FloatToStr(Imposto.Calcula(fnum1));
+  end;
+
+end;
+
+procedure TfrmCalculadora.btnImpBClick(Sender: TObject);
+begin
+  if fnum1 <> 0 then begin
+    Imposto := TIptB.Create;
+    edtDisplay.Text := FloatToStr(Imposto.Calcula(fnum1));
+  end;
+
+end;
+
+procedure TfrmCalculadora.btnImpCClick(Sender: TObject);
+begin
+  if fnum1 <> 0 then begin
+    Imposto := TIptC.Create;
+    edtDisplay.Text := FloatToStr(Imposto.Calcula(fnum1));
+  end;
+end;
+
+procedure TfrmCalculadora.btnLimparClick(Sender: TObject);
+begin
+  Limpar;
+end;
+
+procedure TfrmCalculadora.btnResultClick(Sender: TObject);
+begin
+  Processa;
+end;
+
+procedure TfrmCalculadora.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = VK_RETURN then
+    perform(WM_NEXTDLGCTL,0,0);
+end;
+
+procedure TfrmCalculadora.FormShow(Sender: TObject);
+begin
+  Limpar;
+end;
+
+procedure TfrmCalculadora.Limpar;
+begin
+  edtDisplay.Clear;
+  seNum1.Value := 0;
+  fnum1 := seNum1.Value;
+  fnum2 := seNum1.Value;
+  fiptA := seNum1.Value;
+  setOp(rgOperacao.ItemIndex);
+end;
+
+function TfrmCalculadora.OpToDisplay(const value: TOperacao): string;
+begin
+  case value of
+    toSoma: Result := ' + ';
+    toSub:  Result := ' - ';
+    toMult: Result := ' * ';
+    toDiv:  Result := ' / ';
+  end;
+
+end;
+
+procedure TfrmCalculadora.rgOperacaoClick(Sender: TObject);
+begin
+  setOp(rgOperacao.ItemIndex);
+  seNum1Exit(Self);
+end;
+
+procedure TfrmCalculadora.seNum1Exit(Sender: TObject);
+begin
+  if seNum1.Value <> 0 then begin
+    SetNumeros(seNum1.Value);
+  end;
+end;
+
+procedure TfrmCalculadora.SetNumeros(const value: Integer);
+begin
+  if fnum1 <> 0 then begin
+    fnum2 := value;
+    edtDisplay.Text := FloatToStr(fnum1) + OpToDisplay(op) + FloatToStr(fnum2);
+  end
+  else begin
+    fnum1 := value;
+    edtDisplay.Text := FloatToStr(fnum1);
+  end;
+
+
+end;
+
+procedure TfrmCalculadora.setOp(const value: Integer);
+begin
+  case value of
+    0: op := toSoma;
+    1: op := toSub;
+    2: op := toMult;
+    3: op := toDiv;
+  end;
+
+end;
+
+procedure TfrmCalculadora.Processa;
+begin
+  case op of
+    toSoma: begin
+      Calc := TSoma.Create;
+    end;
+    toSub: begin
+      Calc := TSub.Create;
+    end;
+    toMult: begin
+      Calc := TMult.Create;
+    end;
+    toDiv: begin
+      Calc := TDiv.Create;
+    end;
+
+  end;
+
+  fnum1 := Calc.Calcula(fnum1, fnum2);
+  edtDisplay.Text := FloatToStr(fnum1);
+
+end;
+
+end.

@@ -1,0 +1,79 @@
+unit UfrmFuncionario;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UfrmPadrao, Data.DB, Datasnap.DBClient,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls, UFuncionarioController,
+  Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TfrmFuncionario = class(TfrmPadrao)
+    GroupBox1: TGroupBox;
+    dbEdtNome: TDBEdit;
+    GroupBox2: TGroupBox;
+    DBEdtCPF: TDBEdit;
+    GroupBox3: TGroupBox;
+    DBEdtSalario: TDBEdit;
+    cdsDadosid: TAutoIncField;
+    cdsDadosNome: TWideStringField;
+    cdsDadosCPF: TWideStringField;
+    cdsDadosSalario: TBCDField;
+    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnDeletarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+    IFuncController: IFuncionarioController;
+    procedure AtualizaDS;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFuncionario: TfrmFuncionario;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmFuncionario.AtualizaDS;
+begin
+  Dados := IFuncController.LstFunc;
+  cdsDados.Data := Dados[0];
+end;
+
+procedure TfrmFuncionario.btnDeletarClick(Sender: TObject);
+begin
+  inherited;
+  If MessageDlg('Confirmar exclusão?', mtConfirmation, mbOkCancel, 0) = ID_OK then begin
+     IFuncController.Excluir(cdsDados);
+  end;
+
+end;
+
+procedure TfrmFuncionario.btnSalvarClick(Sender: TObject);
+begin
+  inherited;
+  case Operacao of
+    toIncluir: IFuncController.Incluir(cdsDados);
+    toAlteracao: IFuncController.Alterar(cdsDados);
+  end;
+
+end;
+
+procedure TfrmFuncionario.FormCreate(Sender: TObject);
+begin
+  inherited;
+  IFuncController := TFuncionarioController.New;
+end;
+
+procedure TfrmFuncionario.FormShow(Sender: TObject);
+begin
+  inherited;
+  AtualizaDS;
+end;
+
+end.

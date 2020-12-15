@@ -1,0 +1,79 @@
+unit UDependenteController;
+
+interface
+
+uses
+  Data.DB, UdmModelo, System.SysUtils, Vcl.Dialogs, UDependente, UConstante;
+
+type
+  IDependenteController = interface
+    function LstDep: OleVariant;
+    procedure Incluir(const dts: TDataSet);
+  end;
+
+  TDependenteController = class
+  private
+    FdepModelo: TDependente;
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    function LstDep: OleVariant;
+    procedure Incluir(const dts: TDataSet);
+    procedure SetDependente(const value: TFields);
+
+  end;
+
+implementation
+
+{ TDependenteController }
+
+constructor TDependenteController.Create;
+begin
+  FdepModelo := TDependente.Create;
+end;
+
+destructor TDependenteController.Destroy;
+begin
+  FdepModelo.Free;
+  inherited;
+end;
+
+procedure TDependenteController.Incluir(const dts: TDataSet);
+begin
+  try
+    SetDependente(dts);
+    dmModelo.dsDependente.
+
+  except
+    on e: Exception do
+      ShowMessage('Erro Consulta: '+ e.Message);
+  end;
+
+end;
+
+function TDependenteController.LstDep: OleVariant;
+begin
+  try
+    dmModelo.dsDependente.Close;
+    dmModelo.dsDependente.Open;
+    Result := dmModelo.dspDependente.Data;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro Consulta: '+ e.Message);
+  end;
+
+end;
+
+procedure TDependenteController.SetDependente(const value: TFields);
+begin
+  FdepModelo.id             := value.FieldByName('id').Value;
+  FdepModelo.Nome           := value.FieldByName('Nome').Value;
+  FdepModelo.IsCalculaIR    := value.FieldByName('IsCalculaIR').Value;
+  FdepModelo.IsCalculaINSS  := value.FieldByName('IsCalculaINSS').Value;
+  FdepModelo.FuncionarioId  := value.FieldByName('FuncionarioId').Value;
+
+end;
+
+end.

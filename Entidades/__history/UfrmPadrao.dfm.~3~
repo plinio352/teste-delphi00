@@ -1,0 +1,186 @@
+object frmPadrao: TfrmPadrao
+  Left = 0
+  Top = 0
+  Caption = 'Padrao'
+  ClientHeight = 289
+  ClientWidth = 426
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Visible = True
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pgc1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 426
+    Height = 289
+    ActivePage = tsDados
+    Align = alClient
+    TabOrder = 0
+    object tsDados: TTabSheet
+      Caption = 'Dados'
+      ExplicitWidth = 281
+      ExplicitHeight = 165
+      object Panel1: TPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 412
+        Height = 41
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = 240
+        ExplicitTop = 104
+        ExplicitWidth = 185
+        object Splitter1: TSplitter
+          Left = 156
+          Top = 1
+          Width = 5
+          Height = 39
+          ExplicitLeft = 76
+        end
+        object Splitter2: TSplitter
+          Left = 76
+          Top = 1
+          Width = 5
+          Height = 39
+          ExplicitLeft = 71
+          ExplicitTop = -1
+        end
+        object btnIncluir: TButton
+          Left = 1
+          Top = 1
+          Width = 75
+          Height = 39
+          Align = alLeft
+          Caption = 'Incluir'
+          TabOrder = 0
+          ExplicitLeft = -34
+          ExplicitTop = -1
+        end
+        object btnAlterar: TButton
+          Left = 81
+          Top = 1
+          Width = 75
+          Height = 39
+          Align = alLeft
+          Caption = 'Alterar'
+          TabOrder = 1
+          ExplicitLeft = 38
+          ExplicitTop = -1
+        end
+        object btnDeletar: TButton
+          Left = 161
+          Top = 1
+          Width = 75
+          Height = 39
+          Align = alLeft
+          Caption = 'Deletar'
+          TabOrder = 2
+          ExplicitLeft = 242
+          ExplicitTop = -1
+        end
+      end
+      object Panel2: TPanel
+        Left = 0
+        Top = 47
+        Width = 418
+        Height = 214
+        Align = alClient
+        TabOrder = 1
+        ExplicitLeft = 128
+        ExplicitTop = 152
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+        object dbgDados: TDBGrid
+          Left = 1
+          Top = 1
+          Width = 416
+          Height = 212
+          Align = alClient
+          DataSource = dsDados
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
+        end
+      end
+    end
+    object tsMovimento: TTabSheet
+      Caption = 'Movimento'
+      ImageIndex = 1
+      ExplicitWidth = 281
+      ExplicitHeight = 165
+      object Panel3: TPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 412
+        Height = 41
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = 240
+        ExplicitTop = 104
+        ExplicitWidth = 185
+        object Splitter4: TSplitter
+          Left = 76
+          Top = 1
+          Width = 5
+          Height = 39
+          ExplicitLeft = 71
+          ExplicitTop = -1
+        end
+        object btnCancelar: TButton
+          Left = 1
+          Top = 1
+          Width = 75
+          Height = 39
+          Align = alLeft
+          Caption = 'Cancelar'
+          TabOrder = 0
+        end
+        object btnSalvar: TButton
+          Left = 81
+          Top = 1
+          Width = 75
+          Height = 39
+          Align = alLeft
+          Caption = 'Salvar'
+          TabOrder = 1
+        end
+      end
+      object Panel4: TPanel
+        Left = 0
+        Top = 47
+        Width = 418
+        Height = 214
+        Align = alClient
+        TabOrder = 1
+        ExplicitLeft = 128
+        ExplicitTop = 152
+        ExplicitWidth = 185
+        ExplicitHeight = 41
+      end
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = cdsDados
+    Left = 80
+    Top = 136
+  end
+  object cdsDados: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 136
+    Top = 136
+  end
+end

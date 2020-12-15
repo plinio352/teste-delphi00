@@ -1,0 +1,16 @@
+unit UConstante;
+
+interface
+
+const
+  DEP_INCLUIR = 'insert into Dependente(Nome, IsCalculaIR, IsCalculaINSS, FuncionarioId) values(:Nome, :IsCalculaIR, :IsCalculaINSS, :FuncionarioId)';
+  DEP_ALTERACAO = '';
+  DEP_EXCLUSAO = '';
+
+  FUNC_INCLUIR = 'insert into Funcionario(Nome, CPF, Salario) values(:Nome, :CPF, :Salario)';
+  FUNC_ALTERACAO = '';
+  FUNC_EXCLUSAO = '';
+
+implementation
+
+end.

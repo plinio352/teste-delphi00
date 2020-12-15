@@ -1,0 +1,11 @@
+unit UProcessa;
+
+type
+  ICalculadora = interface
+
+  end;
+interface
+
+implementation
+
+end.

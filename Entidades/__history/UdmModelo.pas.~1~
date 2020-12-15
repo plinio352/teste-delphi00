@@ -1,0 +1,25 @@
+unit UdmModelo;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmModelo = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmModelo: TdmModelo;
+
+implementation
+
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
+{$R *.dfm}
+
+end.

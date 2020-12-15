@@ -1,0 +1,179 @@
+object frmCalculadora: TfrmCalculadora
+  Left = 0
+  Top = 0
+  Caption = 'Calculadora'
+  ClientHeight = 267
+  ClientWidth = 283
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    AlignWithMargins = True
+    Left = 3
+    Top = 55
+    Width = 277
+    Height = 42
+    Align = alTop
+    Caption = 'Digite:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    object seNum1: TSpinEdit
+      AlignWithMargins = True
+      Left = 10
+      Top = 15
+      Width = 88
+      Height = 23
+      MaxValue = 0
+      MinValue = 0
+      TabOrder = 0
+      Value = 0
+      OnExit = seNum1Exit
+    end
+    object btnLimpar: TButton
+      AlignWithMargins = True
+      Left = 212
+      Top = 19
+      Width = 60
+      Height = 18
+      Align = alRight
+      Caption = 'Limpar'
+      TabOrder = 1
+      OnClick = btnLimparClick
+      ExplicitLeft = 202
+    end
+  end
+  object rgOperacao: TRadioGroup
+    Left = 0
+    Top = 201
+    Width = 283
+    Height = 41
+    Align = alBottom
+    Caption = 'Operac'#227'o:'
+    Columns = 4
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ItemIndex = 0
+    Items.Strings = (
+      '+'
+      '-'
+      '*'
+      '/')
+    ParentFont = False
+    TabOrder = 1
+    OnClick = rgOperacaoClick
+    ExplicitLeft = 13
+    ExplicitTop = 105
+    ExplicitWidth = 225
+  end
+  object btnResult: TButton
+    Left = 0
+    Top = 242
+    Width = 283
+    Height = 25
+    Align = alBottom
+    Caption = '='
+    TabOrder = 2
+    OnClick = btnResultClick
+    ExplicitLeft = 244
+    ExplicitTop = 121
+    ExplicitWidth = 33
+  end
+  object Panel1: TPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 277
+    Height = 46
+    Align = alTop
+    TabOrder = 3
+    object edtDisplay: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 269
+      Height = 38
+      Align = alClient
+      ReadOnly = True
+      TabOrder = 0
+      Text = 'edtDisplay'
+      ExplicitWidth = 157
+      ExplicitHeight = 21
+    end
+  end
+  object Panel2: TPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 157
+    Width = 277
+    Height = 41
+    Align = alBottom
+    TabOrder = 4
+    ExplicitLeft = 40
+    ExplicitTop = 152
+    ExplicitWidth = 185
+    object Splitter1: TSplitter
+      Left = 171
+      Top = 1
+      Width = 20
+      Height = 39
+      ExplicitLeft = 166
+    end
+    object Splitter2: TSplitter
+      Left = 76
+      Top = 1
+      Width = 20
+      Height = 39
+    end
+    object btnImpA: TButton
+      Left = 1
+      Top = 1
+      Width = 75
+      Height = 39
+      Align = alLeft
+      Caption = 'Imposto A'
+      TabOrder = 0
+      ExplicitLeft = -5
+      ExplicitTop = -1
+    end
+    object btnImpC: TButton
+      Left = 191
+      Top = 1
+      Width = 75
+      Height = 39
+      Align = alLeft
+      Caption = 'Imposto C'
+      TabOrder = 1
+      ExplicitLeft = 82
+      ExplicitTop = -1
+    end
+    object btnImpB: TButton
+      Left = 96
+      Top = 1
+      Width = 75
+      Height = 39
+      Align = alLeft
+      Caption = 'Imposto B'
+      TabOrder = 2
+      ExplicitLeft = 40
+      ExplicitTop = 16
+      ExplicitHeight = 25
+    end
+  end
+end

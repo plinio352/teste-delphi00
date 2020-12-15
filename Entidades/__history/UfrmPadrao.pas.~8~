@@ -1,0 +1,85 @@
+unit UfrmPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Datasnap.DBClient, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TfrmPadrao = class(TForm)
+    pgc1: TPageControl;
+    tsDados: TTabSheet;
+    tsMovimento: TTabSheet;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    btnIncluir: TButton;
+    Splitter1: TSplitter;
+    btnAlterar: TButton;
+    Splitter2: TSplitter;
+    btnDeletar: TButton;
+    Panel3: TPanel;
+    Splitter4: TSplitter;
+    btnCancelar: TButton;
+    btnSalvar: TButton;
+    Panel4: TPanel;
+    dbgDados: TDBGrid;
+    dsDados: TDataSource;
+    cdsDados: TClientDataSet;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnIncluirClick(Sender: TObject);
+    procedure btnAlterarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Dados: OleVariant;
+  end;
+
+var
+  frmPadrao: TfrmPadrao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPadrao.btnAlterarClick(Sender: TObject);
+begin
+  pgc1.ActivePage := tsMovimento;
+
+end;
+
+procedure TfrmPadrao.btnCancelarClick(Sender: TObject);
+begin
+  pgc1.ActivePage := tsDados;
+
+end;
+
+procedure TfrmPadrao.btnIncluirClick(Sender: TObject);
+begin
+  pgc1.ActivePage := tsMovimento;
+end;
+
+procedure TfrmPadrao.btnSalvarClick(Sender: TObject);
+begin
+  pgc1.ActivePage := tsDados;
+
+end;
+
+procedure TfrmPadrao.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  frmPadrao := nil;
+  Action := caFree;
+
+end;
+
+procedure TfrmPadrao.FormShow(Sender: TObject);
+begin
+  pgc1.ActivePage := tsDados;
+end;
+
+end.

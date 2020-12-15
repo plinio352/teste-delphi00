@@ -1,0 +1,10 @@
+unit UConstante;
+
+interface
+
+const
+  DEP_INCLUIR = 'insert into Dependente(Nome, IsCalculaIR, IsCalculaINSS, FuncionarioId) values(:Nome, :IsCalculaIR, :IsCalculaINSS, :FuncionarioId)';
+
+implementation
+
+end.

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/12/14 12:17:27.000.395,=C:\Users\plinio\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 12:18:35.000.255,E:\Desenvolvimento\theossistemas\teste-delphi\Calculadora\UfrmCalculadora.dfm=C:\Users\plinio\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/12/14 12:18:35.000.255,E:\Desenvolvimento\theossistemas\teste-delphi\Calculadora\UfrmCalculadora.pas=C:\Users\plinio\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 12:18:47.000.328,E:\Desenvolvimento\theossistemas\teste-delphi\Calculadora\Calculadora.dproj=C:\Users\plinio\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/12/14 15:00:40.000.089,=E:\Desenvolvimento\theossistemas\teste-delphi\Calculadora\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 15:01:22.000.509,E:\Desenvolvimento\theossistemas\teste-delphi\Calculadora\UProcessa.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Calculadora\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

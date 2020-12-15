@@ -1,0 +1,193 @@
+unit UProcessa;
+
+interface
+
+uses
+  System.SysUtils, Vcl.Dialogs;
+
+type
+  ICalculadora = interface
+    ['{01D419BC-3933-41F6-9CC4-0F3965AACC00}']
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+  IImposto = interface
+    ['{57C81D26-659B-43C6-B9C5-D14DD840C494}']
+    function Calcula(const value_0: Double): Double;
+  end;
+
+  TSoma = class(TInterfacedObject, ICalculadora)
+  public
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+  TSub = class(TInterfacedObject, ICalculadora)
+  public
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+  TMult = class(TInterfacedObject, ICalculadora)
+  public
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+  TDiv = class(TInterfacedObject, ICalculadora)
+  public
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+  TIptA = class(TInterfacedObject, IImposto)
+  public
+    function Calcula(const value_0: Double): Double;
+  end;
+
+  TIptB = class(TInterfacedObject, IImposto)
+  private
+    FimpA: TIptA;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function Calcula(const value_0: Double): Double;
+  end;
+
+  TIptC = class(TInterfacedObject, IImposto)
+  private
+    FimpA: TIptA;
+    FimpB: TIptB;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function Calcula(const value_0: Double): Double;
+  end;
+
+implementation
+
+{ TSoma }
+
+function TSoma.Calcula(const value_0, value_1: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := value_0 + value_1;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+end;
+
+{ TDiv }
+
+function TDiv.Calcula(const value_0, value_1: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := value_0 / value_1;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+
+end;
+
+{ TMult }
+
+function TMult.Calcula(const value_0, value_1: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := value_0 * value_1;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+
+end;
+
+{ TSub }
+
+function TSub.Calcula(const value_0, value_1: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := value_0 - value_1;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+
+end;
+
+{ TIptA }
+
+function TIptA.Calcula(const value_0: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := value_0 * 0.20 - 500;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+
+end;
+
+{ TIptC }
+
+function TIptC.Calcula(const value_0: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := FimpA.Calcula(value_0) + FimpB.Calcula(value_0);
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+
+end;
+
+constructor TIptC.Create;
+begin
+  FimpA := TIptA.Create;
+  FimpB := TIptB.Create;
+end;
+
+destructor TIptC.Destroy;
+begin
+  FimpA.Free;
+  FimpB.Free;
+  inherited;
+end;
+
+{ TIptB }
+
+function TIptB.Calcula(const value_0: Double): Double;
+begin
+  Result := 0;
+  try
+    Result := FimpA.Calcula(value_0) - 15;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+
+end;
+
+constructor TIptB.Create;
+begin
+  FimpA := TIptA.Create;
+end;
+
+destructor TIptB.Destroy;
+begin
+  FimpA.Free;
+  inherited;
+end;
+
+end.

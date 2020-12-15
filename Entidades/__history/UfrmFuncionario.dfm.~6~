@@ -1,0 +1,26 @@
+inherited frmFuncionario: TfrmFuncionario
+  Caption = 'Funcionario'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pgc1: TPageControl
+    inherited tsDados: TTabSheet
+      ExplicitLeft = 0
+      ExplicitTop = 0
+    end
+    inherited tsMovimento: TTabSheet
+      ExplicitWidth = 418
+      ExplicitHeight = 261
+      inherited Panel3: TPanel
+        ExplicitLeft = 3
+        ExplicitTop = 3
+        ExplicitWidth = 412
+      end
+      inherited Panel4: TPanel
+        ExplicitLeft = 0
+        ExplicitTop = 47
+        ExplicitWidth = 418
+        ExplicitHeight = 214
+      end
+    end
+  end
+end

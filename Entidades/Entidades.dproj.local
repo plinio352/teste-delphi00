@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/12/14 17:57:10.000.907,=C:\Users\plinio\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 17:59:08.000.737,C:\Users\plinio\Documents\RAD Studio\Projects\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmPrincipal.pas</Transaction>
+    <Transaction>2020/12/14 17:59:08.000.737,C:\Users\plinio\Documents\RAD Studio\Projects\Unit1.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmPrincipal.dfm</Transaction>
+    <Transaction>2020/12/14 17:59:25.000.648,C:\Users\plinio\Documents\RAD Studio\Projects\Project1.dproj=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Entidades.dproj</Transaction>
+    <Transaction>2020/12/14 18:00:25.000.251,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 18:01:49.000.983,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UdmModelo.pas</Transaction>
+    <Transaction>2020/12/14 18:01:49.000.983,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UdmModelo.dfm</Transaction>
+    <Transaction>2020/12/14 18:11:20.000.992,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 18:11:40.000.745,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UFuncionario.pas</Transaction>
+    <Transaction>2020/12/14 18:11:47.000.088,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 18:12:04.000.385,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UDependente.pas</Transaction>
+    <Transaction>2020/12/14 18:21:34.000.015,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 18:22:39.000.354,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UDependenteController.pas</Transaction>
+    <Transaction>2020/12/14 18:22:53.000.493,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 18:23:16.000.169,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UFuncionarioController.pas</Transaction>
+    <Transaction>2020/12/14 19:30:19.000.675,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 19:30:58.000.653,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UConstante.pas</Transaction>
+    <Transaction>2020/12/14 20:17:40.000.071,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 20:18:20.000.508,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmDependente.pas</Transaction>
+    <Transaction>2020/12/14 20:18:20.000.508,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmDependente.dfm</Transaction>
+    <Transaction>2020/12/14 20:18:28.000.549,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/14 20:19:09.000.360,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmFuncionario.dfm</Transaction>
+    <Transaction>2020/12/14 20:19:09.000.360,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmFuncionario.pas</Transaction>
+    <Transaction>2020/12/15 08:59:22.987,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmPadrao.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmFuncionario.pas</Transaction>
+    <Transaction>2020/12/15 08:59:22.987,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmPadrao.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmFuncionario.dfm</Transaction>
+    <Transaction>2020/12/15 09:00:29.928,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmDependente.pas=</Transaction>
+    <Transaction>2020/12/15 09:09:45.193,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/15 09:10:27.228,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmFuncionario.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/15 09:10:27.228,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmFuncionario.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.dfm</Transaction>
+    <Transaction>2020/12/15 09:10:34.147,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/15 09:11:18.215,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmDependente.dfm=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.dfm</Transaction>
+    <Transaction>2020/12/15 09:11:18.215,E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UfrmDependente.pas=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\Unit1.pas</Transaction>
+    <Transaction>2020/12/15 10:50:08.890,=E:\Desenvolvimento\theossistemas\teste-delphi\Entidades\UFrmPesquisa.pas</Transaction>
+  </Transactions>
+</BorlandProject>

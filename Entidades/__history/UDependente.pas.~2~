@@ -1,0 +1,13 @@
+unit UDependente;
+
+interface
+
+type
+  TDependente = class
+
+  end;
+
+
+implementation
+
+end.

@@ -1,0 +1,34 @@
+unit UProcessa;
+
+interface
+
+uses
+  System.SysUtils, Vcl.Dialogs;
+
+type
+  ICalculadora = interface
+    ['{01D419BC-3933-41F6-9CC4-0F3965AACC00}']
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+  TSoma = class(TInterfacedObject, ICalculadora)
+  public
+    function Calcula(const value_0, value_1: Double): Double;
+  end;
+
+implementation
+
+{ TSoma }
+
+function TSoma.Calcula(const value_0, value_1: Double): Double;
+begin
+  try
+    Result := value_0 + value_1;
+
+  except
+    on e: Exception do
+      ShowMessage('Erro pocessamento calculo!');
+  end;
+end;
+
+end.

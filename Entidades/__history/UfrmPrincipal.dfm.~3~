@@ -1,0 +1,32 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Principal'
+  ClientHeight = 289
+  ClientWidth = 514
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = mmPrinc
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object mmPrinc: TMainMenu
+    Left = 104
+    Top = 104
+    object Menu: TMenuItem
+      Caption = 'Menu'
+      object Funcionario1: TMenuItem
+        Caption = 'Funcionario'
+        OnClick = Funcionario1Click
+      end
+      object Dependente1: TMenuItem
+        Caption = 'Dependente'
+        OnClick = Dependente1Click
+      end
+    end
+  end
+end
